@@ -4,9 +4,10 @@ import showDownLogo from '/logo.png'
 import './App.css'
 
 function App() {
-    const [player1Score, setPlayer1Score] = useState(0)
-    const [player2Score, setPlayer2Score] = useState(0)
-    const [potScore, setPotScore] = useState(5)
+    const defaultPot = 10;
+    const [player1Score, setPlayer1Score] = useState(0);
+    const [player2Score, setPlayer2Score] = useState(0);
+    const [potScore, setPotScore] = useState(defaultPot);
     /*
 
     const [isLoading, setIsLoading] = useState(true);
@@ -48,7 +49,7 @@ function App() {
                     <div className="controls">
                         <button className="btn" onClick={() => {
                             setPlayer1Score(player1Score + potScore);
-                            setPotScore(5);
+                            setPotScore(defaultPot);
                         }}>win</button>
                         <button className="btn" onClick={() => {
                             setPlayer1Score(Math.ceil(potScore / 2) + player1Score);
@@ -101,7 +102,7 @@ function App() {
                     <div className="controls">
                         <button className="btn" onClick={() => {
                             setPlayer2Score(player2Score + potScore);
-                            setPotScore(5);
+                            setPotScore(defaultPot);
                         }}>win</button>
                         <button className="btn" onClick={() => {
                             setPlayer2Score(Math.ceil(potScore / 2) + player2Score);
@@ -112,9 +113,9 @@ function App() {
 
                 {/* Footer buttons */}
                 <div className="footer-buttons">
-                    <button className="foot" onClick={() => setPotScore(5)}>Reset pot</button>
+                    <button className="foot" onClick={() => setPotScore(defaultPot)}>Reset pot</button>
                     <button className="foot" onClick={() => {
-                        setPotScore(5);
+                        setPotScore(defaultPot);
                         setPlayer1Score(0);
                         setPlayer2Score(0);
                     }}>New game</button>
