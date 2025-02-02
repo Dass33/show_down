@@ -1,6 +1,5 @@
 import { useState } from 'react'
-import showDownLogo from '/logo.png'
-//import loadingGif from '/loading.gif'
+import showDownLogo from '/showdown_logo.webp'
 import './App.css'
 
 function App() {
@@ -8,31 +7,11 @@ function App() {
     const [player1Score, setPlayer1Score] = useState(0);
     const [player2Score, setPlayer2Score] = useState(0);
     const [potScore, setPotScore] = useState(defaultPot);
-    /*
 
-    const [isLoading, setIsLoading] = useState(true);
-
-    // Switch off loading after 3 seconds (adjust as needed)
-    useEffect(() => {
-        const timer = setTimeout(() => {
-            setIsLoading(false);
-        }, 3000);
-
-        return () => clearTimeout(timer);
-    }, []);
-
-    // If still loading, render the loading component
-    if (isLoading) {
-        return (
-            <div className="">
-                <img className='loading-gif' src={loadingGif} alt="Loading..." />
-            </div>
-        );
-    }*/
     return (
         <>
             <div className="main-content fade-in flex-col items-center max-w-[35rem] mx-auto">
-                <div className='pt-4 w-32 mx-auto'>
+                <div className='pt-4 w-64 my-1 mx-auto'>
                     <img src={showDownLogo} alt="logo" />
                 </div>
 
@@ -50,7 +29,7 @@ function App() {
                         <button className="btn" onClick={() => {
                             setPlayer1Score(player1Score + potScore);
                             setPotScore(defaultPot);
-                        }}>win</button>
+                        }}>Win</button>
                         <button className="btn" onClick={() => {
                             setPlayer1Score(Math.ceil(potScore / 2) + player1Score);
                             if (potScore != 1) setPotScore(Math.ceil(potScore / 2));
@@ -59,7 +38,7 @@ function App() {
                 </div>
 
                 <svg className='mx-auto mt-2 mb-4' width="300" height="30" xmlns="http://www.w3.org/2000/svg">
-                    <line x1="20" y1="15" x2="280" y2="15" stroke="#f2b021" stroke-width="4" stroke-dasharray="50,20" />
+                    <line x1="20" y1="15" x2="280" y2="15" stroke="#DE1204" stroke-width="7" stroke-dasharray="50,20" strokeLinecap='round' />
                 </svg>
 
                 {/* Middle row */}
@@ -86,7 +65,7 @@ function App() {
                     </div>
                 </div>
                 <svg className='mx-auto mb-2 mt-4' width="300" height="30" xmlns="http://www.w3.org/2000/svg">
-                    <line x1="20" y1="15" x2="280" y2="15" stroke="#f2b021" stroke-width="4" stroke-dasharray="50,20" />
+                    <line x1="20" y1="15" x2="280" y2="15" stroke="#DE1204" stroke-width="7" stroke-dasharray="50,20" strokeLinecap='round' />
                 </svg>
 
                 {/* Bottom row */}
@@ -103,7 +82,7 @@ function App() {
                         <button className="btn" onClick={() => {
                             setPlayer2Score(player2Score + potScore);
                             setPotScore(defaultPot);
-                        }}>win</button>
+                        }}>Win</button>
                         <button className="btn" onClick={() => {
                             setPlayer2Score(Math.ceil(potScore / 2) + player2Score);
                             if (potScore != 1) setPotScore(Math.ceil(potScore / 2));

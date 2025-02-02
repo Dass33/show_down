@@ -5,9 +5,9 @@ body {
     padding: 0;
     font-family: sans-serif;
     /* Dark green background */
-    background-color: #013e2b;
+    background-color: #F8F8F7;
     /* Gold text */
-    color: #f2b021;
+    color: #171313;
     text-align: center;
 }
 
@@ -46,8 +46,8 @@ body {
 
 /* Buttons */
 .btn {
-    background-color: #f2b021;
-    color: #0B1F42;
+    background-color: #DE1204;
+    color: #F8F8F7;
     border: none;
     border-radius: 8px;
     padding: 10px 16px;
@@ -55,11 +55,12 @@ body {
     cursor: pointer;
     transition: opacity 0.2s ease-in-out;
     width: 4rem;
+    font-size: 1.2rem;
 }
 
 .foot {
-    background-color: #f2b021;
-    color: #0B1F42;
+    background-color: #DE1204;
+    color: #F8F8F7;
     border: none;
     border-radius: 8px;
     padding: 10px 16px;
@@ -67,7 +68,7 @@ body {
     cursor: pointer;
     transition: opacity 0.2s ease-in-out;
     width: 7rem;
-    font-size: 0.8rem;
+    font-size: 0.9rem;
 }
 
 .btn:hover {
