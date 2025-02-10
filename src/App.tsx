@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import showDownLogo from '/showdown_logo.webp'
+import showDownLogo from '/showdown_logo_new.webp'
 import './App.css'
 
 function App() {
