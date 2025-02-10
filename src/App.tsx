@@ -7,11 +7,39 @@ function App() {
     const [player1Score, setPlayer1Score] = useState(0);
     const [player2Score, setPlayer2Score] = useState(0);
     const [potScore, setPotScore] = useState(defaultPot);
+    const [show_21_modal, setShow_21_modal] = useState(false);
+    const [show_6_modal, setShow_6_modal] = useState(false);
 
     return (
         <>
-            <div className="main-content fade-in flex-col items-center max-w-[35rem] mx-auto">
-                <div className='pt-4 w-64 my-1 mx-auto'>
+            {show_21_modal &&
+                <div className="fixed z-50 h-screen w-screen text-black">
+                    <div className='mt-52 bg-[#e5e5e3] border-4 border-[#bc1003] rounded-md w-fit mx-auto py-10 px-20'>
+                        <p className="border-black text-center my-auto text-lg font-bold">Tvoje číslo je:</p>
+                        <p className="border-black text-center text-5xl my-6 font-bold">{Math.ceil(Math.floor(Math.random() * 21))}</p>
+                        <div className="flex w-full justify-center text-white text-xl">
+                            <button className="border-2 border-black rounded-full flex px-8 py-2" onClick={() => setShow_21_modal(false)}>
+                                <span className="my-auto text-black font-bold">Zavřít</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            }
+            {show_6_modal &&
+                <div className="fixed z-50 h-screen w-screen text-black">
+                    <div className='mt-52 bg-[#e5e5e3] border-4 border-[#bc1003] rounded-md w-fit mx-auto py-10 px-20'>
+                        <p className="border-black text-center my-auto text-lg font-bold">Tvoje číslo je:</p>
+                        <p className="border-black text-center text-5xl my-6 font-bold">{Math.ceil(Math.floor(Math.random() * 6) + 1)}</p>
+                        <div className="flex w-full justify-center text-white text-xl">
+                            <button className="border-2 border-black rounded-full flex px-8 py-2" onClick={() => setShow_6_modal(false)}>
+                                <span className="my-auto text-black font-bold">Zavřít</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            }
+            <div className="z-0 main-content fade-in flex-col items-center max-w-[35rem] mx-auto">
+                <div className='pt-2 w-56 my-1 mx-auto'>
                     <img src={showDownLogo} alt="logo" />
                 </div>
 
@@ -92,12 +120,15 @@ function App() {
 
                 {/* Footer buttons */}
                 <div className="footer-buttons">
-                    <button className="foot" onClick={() => setPotScore(defaultPot)}>Reset pot</button>
-                    <button className="foot" onClick={() => {
+                    <button className="foot-left" onClick={() => setShow_21_modal(true)}>0-21</button>
+                    <button className="foot-center" onClick={() => setPotScore(defaultPot)}>Reset pot</button>
+                    <button className="foot-center" onClick={() => {
                         setPotScore(defaultPot);
                         setPlayer1Score(0);
                         setPlayer2Score(0);
                     }}>New game</button>
+                    <button className="foot-right" onClick={() => setShow_6_modal(true)}>1-6</button>
+
                 </div>
             </div>
         </>
